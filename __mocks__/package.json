@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "some-dep": "0"
-  },
-  "devDependencies": {
-    "some-dev-dep": "0"
-  }
-}

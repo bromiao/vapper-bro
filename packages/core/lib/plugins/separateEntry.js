@@ -6,7 +6,7 @@ module.exports = function (api) {
     clientModuleName: 'defaultEnhanceClientApp'
   }
 
-  const clientPath = path.isAbsolute(api.options.clientEntry)
+  /*const clientPath = path.isAbsolute(api.options.clientEntry)
     ? api.options.clientEntry
     : api.resolveCWD(api.options.clientEntry)
 
@@ -19,7 +19,10 @@ module.exports = function (api) {
     : api.resolveCWD(api.options.serverEntry)
   if (fs.pathExistsSync(serverPath)) {
     enhanceObj.server = serverPath
-  }
+  }*/
+
+  enhanceObj.client = 'E:\\webProject\\kb-m-v1.0\\src\\client-entry.js'
+  enhanceObj.server = 'E:\\webProject\\kb-m-v1.0\\src\\server-entry.js'
 
   api.addEnhanceFile(enhanceObj)
 }

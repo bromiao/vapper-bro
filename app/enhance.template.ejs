@@ -1,15 +1,15 @@
 <% for (const enhanceObj of enhanceFiles) { %>
-import <%- enhanceObj.clientModuleName %> from '<%- type === "client" ? enhanceObj.client : enhanceObj.server %>'
+  import <%- enhanceObj.clientModuleName %> from '<%- type === "client" ? "E:\\webProject\\kb-m-v1.0\\src\\client-entry.js" : "E:\\webProject\\kb-m-v1.0\\src\\server-entry.js" %>'
 <% } %>
 
 const fns = []
 
 export default function (options) {
-  <% for (const enhanceObj of enhanceFiles) { %>
+<% for (const enhanceObj of enhanceFiles) { %>
   fns.push(<%- enhanceObj.clientModuleName %>(options))
-  <% } %>
+<% } %>
 }
 
 export function enhanceInstance (opts) {
-  fns.filter(fn => typeof fn === 'function').forEach(fn => fn(opts))
+fns.filter(fn => typeof fn === 'function').forEach(fn => fn(opts))
 }
